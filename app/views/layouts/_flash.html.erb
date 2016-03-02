@@ -1,0 +1,7 @@
+<section class="notifications">
+  <% flash.each do |key, val| %>
+    <div class="notification notification-flash">
+      <%= content_tag(:div, value) %>
+    </div>
+  <% end %>
+</section>

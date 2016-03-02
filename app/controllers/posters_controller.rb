@@ -19,7 +19,7 @@ class PostersController < ApplicationController
     @poster = Poster.new(poster_params)
 
     if @poster.save
-      redirect_to posters_path
+      redirect_to posters_path, notice: "#{@poster.title} added"
     else
       render :new
     end

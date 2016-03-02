@@ -1,6 +1,6 @@
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
-    <div class="notifications notifications-error">
+    <div class="notification notification-error">
       <div>
         <%= pluralize(@user.errors.count, "error") %> prevented this user from being submitted:
         <ul>

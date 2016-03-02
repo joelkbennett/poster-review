@@ -1,15 +1,17 @@
 <%= form_for @poster do |f| %>
   <% if @poster.errors.any? %>
-    <div class="notifications notifications-error">
-      <div>
-        <%= pluralize(@poster.errors.count, "error") %> prevented this poster from being submitted:
-        <ul>
-          <% @poster.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>      
-    </div>
+    <section class="notifications">
+      <div class="notification notification-error">
+        <div>
+          <%= pluralize(@poster.errors.count, "error") %> prevented this poster from being submitted:
+          <ul>
+            <% @poster.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>      
+      </div>
+    </section>  
   <% end %>
 
   <div class="form-item">
