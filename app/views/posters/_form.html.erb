@@ -1,4 +1,17 @@
 <%= form_for @poster do |f| %>
+  <% if @poster.errors.any? %>
+    <div class="notifications notifications-error">
+      <div>
+        <%= pluralize(@movie.errors.count, "error") %> prevented this movie from being submitted:
+        <ul>
+          <% @movie.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>      
+    </div>
+  <% end %>
+
   <div class="form-item">
     <%= f.label :title %>
     <%= f.text_field :title %>
