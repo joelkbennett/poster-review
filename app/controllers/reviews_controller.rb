@@ -1,4 +1,8 @@
 class ReviewsController < ApplicationController
+
+  before_filter :load_poster
+  before_filter :restrict_access
+
   def new
     @poster = Poster.find(params[:poster_id])
     @review = @poster.reviews.build
@@ -18,6 +22,10 @@ class ReviewsController < ApplicationController
   end
 
   protected
+
+  def load_poster 
+    @poster = Poster.find(params[:poster_id])
+  end
 
   def review_params
     params.require(:review).permit(:text, :rating)
