@@ -1,0 +1,39 @@
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="notifications notifications-error">
+      <div>
+        <%= pluralize(@user.errors.count, "error") %> prevented this user from being submitted:
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>      
+    </div>
+  <% end %>
+
+  <div class="form-item">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="form-item">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="form-item">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+   <div class="form-item">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>   
+
+  <div class="form-item">
+    <%= f.submit "Submit" %>
+  </div>
+
+<% end %>
