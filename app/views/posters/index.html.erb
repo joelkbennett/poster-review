@@ -1,0 +1,19 @@
+<article class="page-article page-poster-index">
+  <header class="article-header">
+    <h1 class="article-title">Posters</h1>
+  </header>
+
+  <section class="article-body">
+    <% @posters.each do |poster| %>
+      <article class="poster-teaser">
+        <h1 class='teaser-title'><%= link_to poster.title, poster_path(poster) %></h1>
+        <h2 class='teaser-subtitle'><%= poster.artist %></h2>
+        <p><%= poster.release_date %></p>
+      </article>
+    <% end %>
+  </section>
+
+  <footer class="article-footer">
+    <%= link_to "Submit a Poster", new_poster_path %>
+  </footer>
+</article>
