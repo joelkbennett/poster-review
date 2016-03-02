@@ -1,0 +1,13 @@
+<h2>Reviews</h2>
+
+<% @poster.reviews.each do |review| %>
+  <p class='review-body'><%= review.text %></p>
+  <p class='review-rating'><%= review.rating %></p>
+  <p class='review-reviewer'><%= review.user.username %></p>
+<% end %>
+
+<% if current_user %>
+  <%= link_to "Add a review", new_poster_review_path(@poster) %>
+<% else %>
+  <p><%= link_to 'Log in', new_session_path %> to add a review.</p>
+<% end %>

@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
+  get 'reviews/new'
 
-  get 'sessions/create'
+  get 'reviews/create'
 
-  resources :posters
+  resources :posters do
+    resources :reviews, only: [:new, :create]
+  end
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
 
