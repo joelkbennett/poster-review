@@ -7,8 +7,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      session[:use_id] = @user.id
-      redirect_to posters_path, notice: "Welcome #{@user.uername}"
+      session[:user_id] = @user.id
+      redirect_to posters_path, notice: "Welcome #{@user.username}"
     else
       render :new
     end
