@@ -70,27 +70,50 @@ body {
 // Full Poster Display
 
 .poster-display {
-  display: hidden;
-  overflow: hidden;
-  height: 0px;
-  padding-bottom: 2em;
-  transition: display 1s, height 1s;
-  text-align: center;
-
-   &.poster-active {
-    display: block; 
-    min-height: 800px;
-  }
+  background-color: #efefef;
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow: scroll;
+  height: 100%;
+  width: 1200px;
+  transform: translateX(1200px);
+  transition: transform .5;
+  z-index: 3;
 
   img {
     max-height: 750px;
   }
 }
 
+body.poster-active {
+  .poster-display {
+    // transform: translateX(0);
+  }
+
+  .page {
+    transform: translate(-1200px);
+  }
+}
+
+
+.poster-display-inner {
+  padding: 100px;
+}
+
 .poster-loading {
-  margin-top: 6em;
+  margin: 12em 0 0 6em;
 }
 
 circle {
   fill: #ddd;
+}
+
+.poster-toggle {
+  width: 50px;
+  height: 50px;
+  background-color: #444;
+  position: fixed;
+  top: 50px; right: 1180px;
+  z-index: 4;
 }
