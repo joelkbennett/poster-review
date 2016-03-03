@@ -1,0 +1,64 @@
+body {
+  margin: 1em 6em; 
+}
+
+.page {
+  // width: 960px;
+}
+
+//
+
+.site-header {
+  padding: 2em;
+  border-bottom: thin solid #eee;
+  text-align: center;
+}
+
+.site-body {
+  padding: 2em;
+}
+
+.site-footer {
+  padding: 2em;
+  border-top: thin solid #eee;
+}
+
+// Poster layouts
+
+// Index
+
+.page-poster-index {
+  .article-body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: flex-start;
+  }
+}
+
+// Teaser
+
+.poster-teaser {
+  width: 350px;
+  color: #666;
+  margin-right: 5px;
+  border-bottom: 1px solid #efefef;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+
+  img {
+    width: 100%;
+  }
+}
+
+.teaser-title, .teaser-subtitle {
+  padding-left: 2em;
+}
+
+.teaser-title {
+  font-size: .9em;
+}
+
+.teaser-subtitle {
+ font-size: .9em;
+}

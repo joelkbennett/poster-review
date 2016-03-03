@@ -1,0 +1,8 @@
+.image-link {
+  background-color: transparent;
+  transition: opacity .25s;
+}
+
+.image-link:hover {
+  opacity: .75;
+}
