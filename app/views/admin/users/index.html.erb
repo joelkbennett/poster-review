@@ -1,0 +1,31 @@
+<article class="page-article page-poster-index">
+  <header class="article-header">
+    <h1 class="article-title sr-only">Admin Dashboard</h1>
+  </header>
+
+  <section class="article-body">
+    <h2>Users</h2>
+    <table>
+      <thead>
+        <td>#</td>
+        <td>Username</td>
+        <td>Email</td>
+        <td>Account Type</td>
+        <td></td>
+      </thead>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td><%= user.type %></td>
+          <td>Delete User</td>
+        </tr>
+      <% end %>
+    </table>
+  </section>
+
+  <footer class="article-footer">
+    <%= paginate @users %>
+  </footer>
+</article>

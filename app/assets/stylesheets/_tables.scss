@@ -1,0 +1,13 @@
+table {
+  width: 100%;
+  thead {
+    font-weight: bold;
+    border-bottom: thick solid #ddd;
+  }
+  tr {
+    border-bottom: thin solid #ddd;
+  }
+  td {
+    padding: 1em;
+  }
+}

@@ -1,0 +1,26 @@
+// Place all the styles related to the admin/users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin-navigation {
+  position: fixed;
+  top: 0; left: 0;
+  background-color: #ddd;
+  height: 50px;
+  overflow: hidden;
+  width: 100%;
+  z-index: 1;
+
+  ul {
+    padding: 0 2em;
+    float: right;
+    color: #333;
+    list-style: none;
+  }
+}
+
+.nav-active {
+  .admin-navigation {
+
+  }
+}
