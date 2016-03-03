@@ -8,9 +8,15 @@
   transition: transform .5s;
   color: #efefef;
   z-index: 2;
+  text-align: right;
   
   ul {
     list-style: none;
+  }
+
+  li {
+    padding-right: 1em;
+    margin-bottom: .25em;
   }
 }
 
@@ -41,10 +47,12 @@ body.nav-active {
 }
 
 .menu-heading {
-  text-align: center;
   background-color: #333;
   height: 50px;
   width: 100%;
   line-height: 3em;
   color: #999;
+  span {
+    padding-right: .5em;
+  }
 }

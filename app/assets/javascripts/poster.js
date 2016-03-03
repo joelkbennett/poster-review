@@ -16,7 +16,7 @@
       display.empty().append(poster);
       poster.scroll();
       poster.on('click', function() {
-        display.removeClass('poster-active');
+        display.empty().removeClass('poster-active');
       });
     });
   });
