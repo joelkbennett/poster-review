@@ -3,10 +3,14 @@
     <h1 class="article-title sr-only">Posters</h1>
   </header>
 
-  <section class="article-body">
+  <section class="poster-display">
+    <%= render 'loading' %>
+  </section>
+
+  <section class="article-body poster-teasers">
     <% @posters.each do |poster| %>
       <article class="poster-teaser">
-        <%= link_to poster_path(poster), class: 'image-link' do %>
+        <%= link_to poster_path(poster), class: 'image-link', data: { id: poster.id } do %>
           <%= image_tag poster.image.url %>
         <% end %>
         <h1 class='teaser-title'><%= link_to poster.title, poster_path(poster) %></h1>

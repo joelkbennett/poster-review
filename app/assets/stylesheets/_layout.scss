@@ -42,7 +42,7 @@ body {
   width: 350px;
   color: #666;
   margin-right: 5px;
-  border-bottom: 1px solid #efefef;
+  // border-bottom: 1px solid #efefef;
   padding-bottom: 1em;
   margin-bottom: 1em;
 
@@ -61,4 +61,32 @@ body {
 
 .teaser-subtitle {
  font-size: .9em;
+}
+
+// Full Poster Display
+
+.poster-display {
+  display: hidden;
+  overflow: hidden;
+  height: 0px;
+  padding-bottom: 2em;
+  transition: display 1s, height 1s;
+  text-align: center;
+
+   &.poster-active {
+    display: block; 
+    min-height: 800px;
+  }
+
+  img {
+    max-height: 750px;
+  }
+}
+
+.poster-loading {
+  margin-top: 6em;
+}
+
+circle {
+  fill: #ddd;
 }
