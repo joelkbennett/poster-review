@@ -1,0 +1,7 @@
+<article class="poster-teaser">
+  <%= link_to poster_path(poster), class: 'image-link', data: { id: poster.id } do %>
+    <%= image_tag poster.image.url %>
+  <% end %>
+  <h1 class='teaser-title'><%= link_to poster.title, poster_path(poster) %></h1>
+  <h2 class='teaser-subtitle'><%= poster.artist %></h2>
+</article>
