@@ -1,6 +1,10 @@
 class PostersController < ApplicationController
   def index
-    @posters = Poster.all
+    if params[:search]
+      @posters = Poster.where("title LIKE ?", "%#{params[:search]}%")
+    else
+      @posters = Poster.all
+    end
   end
 
   def show
