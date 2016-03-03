@@ -3,10 +3,13 @@
     <h1 class="article-title"><%= @poster.title %></h1>
     <p><%= @poster.review_average %> / 5</p>
     <p><%= formatted_date(@poster.release_date) if @poster.release_date %></p>
+    
+      <p><%= link_to 'edit', edit_poster_path %></p>
+    
   </header>
 
   <section class="article-body">
-    
+    <%= image_tag @poster.image.url %>
   </section>
 
   <footer class="article-footer">

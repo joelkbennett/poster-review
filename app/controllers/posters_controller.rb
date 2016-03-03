@@ -45,7 +45,7 @@ class PostersController < ApplicationController
 
   def poster_params
     params.require(:poster).permit(
-      :title, :artist, :release_date
+      :title, :artist, :release_date, :image
     )
   end
 end
