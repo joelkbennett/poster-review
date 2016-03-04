@@ -1,10 +1,10 @@
 .site-navigation {
   height: 100vh;
-  width: 400px;
+  width: 200px;
   background-color: #222;
   position: fixed;
   top: 0; left: 0;
-  transform: translateX(-400px);
+  transform: translateX(-200px);
   transition: transform .5s;
   color: #efefef;
   z-index: 2;
@@ -30,7 +30,7 @@
   height: 50px;
   background-color: #444;
   position: fixed;
-  top: 0; left: 400px;
+  top: 0; left: 200px;
 }
 
 .nav-toggle:hover {
@@ -43,7 +43,7 @@ body.nav-active {
   }
 
   .page {
-    transform: translateX(400px);
+    transform: translateX(200px);
     opacity: .25;
   }  
 }
@@ -57,4 +57,37 @@ body.nav-active {
   span {
     padding-right: .5em;
   }
+}
+
+.nav-arrow {
+  fill: #999;
+  transition: fill .25s, transform .25s;
+}
+
+.nav-arrow:hover {
+  fill: black;
+  transform: rotate(180deg);
+}
+
+.nav-active {
+  .nav-arrow {
+    transform: rotate(180deg);   
+  }
+}
+
+.poster-arrow {
+  fill: #ddd;
+  opacity: 0;
+  transition: opacity .25s;
+}
+
+.poster-active {
+  .poster-arrow {
+    opacity: 1;
+  }
+}
+
+.modal-arrow {
+  transform: rotate(90deg);
+  fill: #ddd;
 }

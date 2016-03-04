@@ -6,8 +6,14 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:user_id])
+    user = User.find(params[:id])
+    UserMailer.destroy_email(user)
     user.destroy
+
+    respond_to do |format|
+      # format.html { redirect_to '/' }
+      format.json { render json: @user, status: :created, location: @user }
+    end
   end
 
 end

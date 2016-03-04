@@ -5,21 +5,27 @@
 
   <section class="article-body">
     <h2>Users</h2>
-    <table>
+    <table class='users-table'>
       <thead>
         <td>#</td>
         <td>Username</td>
         <td>Email</td>
         <td>Account Type</td>
-        <td></td>
+        <td>Actions</td>
       </thead>
       <% @users.each do |user| %>
         <tr>
-          <td><%= user.id %></td>
-          <td><%= user.username %></td>
-          <td><%= user.email %></td>
-          <td><%= user.type %></td>
-          <td>Delete User</td>
+          <td class='table-col'><%= user.id %></td>
+          <td class='table-col'><%= user.username %></td>
+          <td class='table-col'><%= user.email %></td>
+          <td class='table-col'><%= user.type %></td>
+          <td class='table-col'>
+            <%= link_to 'delete user', admin_user_path(id: user), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'delete-user' %> 
+            | 
+            <a href="#">Edit</a> 
+            | 
+            <a href="#">Switch to User</a>
+          </td>
         </tr>
       <% end %>
     </table>

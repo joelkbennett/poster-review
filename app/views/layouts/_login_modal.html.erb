@@ -1,0 +1,24 @@
+<div class="modal">
+  <div class="modal-inner">
+    <section class="article-body">
+      <%= form_tag session_path, remote: true do %>
+        <div class="form-item">
+          <%= label_tag :email %>
+          <%= text_field_tag :email %>
+        </div>
+
+        <div class="form-item">
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
+        </div>
+
+        <div class="form-item">
+          <%= submit_tag "Log In" %>
+        </div>
+      <% end %>
+    </section>
+  </div>
+  <div class="modal-quit">
+    <svg class='modal-arrow' width="50" height="50" viewBox="-13 -14 50 50" xmlns="http://www.w3.org/2000/svg"><polygon points='0,10 20,0 20,20'></polygon></svg>
+  </div>
+</div>

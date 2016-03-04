@@ -1,0 +1,36 @@
+input[type=text] {
+  border: none;
+  border-bottom: thick solid #ddd;
+  padding-bottom: .5em;
+  padding-left: 1em;
+  transition: border-color .25s, color .25s;
+}
+
+input[type=text]:hover {
+  color: #333;
+}
+
+input[type=text]:focus {
+  color: #333;
+  border-color: #666;
+  outline: none;
+}
+
+.site-search {
+  input[type=text] {
+    width: 400px;
+  }
+}
+
+input[type=submit], .button {
+  background-color: #efefef;
+  border: thin solid #ddd;
+  border-bottom: thick solid #ddd;
+  padding: .5em 2em;
+  color: #666;
+  transition: border-bottom-color .25s;
+}
+
+input[type=submit]:hover, .button:hover {
+  border-bottom-color: #666;
+}

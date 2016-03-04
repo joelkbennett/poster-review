@@ -1,5 +1,7 @@
-<%= form_tag('/', method: 'get') do %>
-  <%= label_tag(:search, "Search for:") %>
-  <%= text_field_tag(:search) %>
-  <%= submit_tag("Search") %>
-<% end %>
+<div class="site-search">
+  <%= form_tag('/', method: 'get', remote: true, class: 'site-search-form') do %>
+    <%= label_tag(:search, "Search for:", class: 'sr-only') %>
+    <%= text_field_tag(:search, nil, placeholder: 'search' ) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>

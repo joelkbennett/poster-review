@@ -1,0 +1,28 @@
+.modal {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  width: 800px;
+  min-height: 600px;
+  transform: translateY(-2000px);
+  transition: transform .25s;
+  background-color: #efefef;
+  border-bottom: 12px solid #444;
+}
+
+.modal-inner {
+  padding: 2em;
+}
+
+.modal-quit {
+  width: 50px; height: 50px;
+  background-color: #333;
+  position: fixed;
+  left: 800px; top: 0;
+}
+
+.modal-active {
+  .modal {
+    transform: translateY(0px);
+  }
+}

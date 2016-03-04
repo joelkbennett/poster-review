@@ -5,6 +5,7 @@ body {
 .site-title {
   font-size: 3em;
   font-weight: 900;
+  position: relative;
 }
 
 a {
@@ -18,9 +19,27 @@ a:hover {
   text-decoration: underline;
 }
 
-.site-title a {
-  text-decoration: none;
-  background-color: transparent;
-  color: #333;
+.site-title a, .site-title a:before, .site-title a:after {
+  position: absolute;
 }
 
+.site-title a {
+  left: 0px;
+  text-decoration: none;
+  background-color: transparent;
+  color: #444;
+  border-right: thick solid #444;
+}
+
+
+// .site-title a:before {
+//   content: 'PostDebate';
+//   left: 17px;
+//   color: red;
+// }
+
+// .site-title a:after {
+//   content: 'PostDebate';
+//   left: 30px;
+//   color: #333;
+// }

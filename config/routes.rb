@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :posters do
     resources :reviews, only: [:new, :create]
   end
+  
   resources :users, only: [:new, :create]
   resource :session, only: [:new, :create, :destroy]
 

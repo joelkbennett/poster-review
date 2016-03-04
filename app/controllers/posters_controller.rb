@@ -2,6 +2,7 @@ class PostersController < ApplicationController
   def index
     if params[:search]
       @posters = Poster.search(params[:search])
+      render json: @posters
     else
       @posters = Poster.all
     end
