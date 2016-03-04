@@ -15,13 +15,18 @@
         id: this.data('id');
       }).done(function(res) {
         $('.poster-loading').fadeOut();
-        var poster = $('<img>').attr({src: res.image.url})
-        inner.empty().append(poster);
-        display.on('click', function() {
-          inner.empty();
-          body.removeClass('poster-active');
-        });
+        createPoster(res);
       });
+    });
+  }
+
+  function createPoster(res) {
+    var poster = $('<img>').attr({src: res.image.url});
+    var title = $('<h1>').addClass('poster-title').text(res.title);
+    inner.empty().append(poster).append(title);
+    display.on('click', function() {
+      inner.empty();
+      body.removeClass('poster-active');
     });
   }
 
