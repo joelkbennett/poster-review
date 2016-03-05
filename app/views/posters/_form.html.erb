@@ -1,6 +1,6 @@
-<%= form_for new_poster do |f| %>
-  <% if new_poster.errors.any? %>
-    <section class="notifications">
+<%= form_for new_poster  do |f| %>
+  <!-- if new_poster.errors.any? -->
+    <!-- <section class="notifications">
       <div class="notification notification-error">
         <div>
           <%= pluralize(new_poster.errors.count, "error") %> prevented this poster from being submitted:
@@ -11,8 +11,8 @@
           </ul>
         </div>      
       </div>
-    </section>  
-  <% end %>
+     --></section>  
+  <!-- end -->
 
   <h2 class="form-title">Add Poster</h2>
   
@@ -28,7 +28,7 @@
 
   <div class="form-item">
     <%= f.label :image, class: 'sr-only' %><br>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, class: 'image-upload' %>
   </div>  
 
   <!-- <div class="form-item">
@@ -39,4 +39,9 @@
   <div class="form-item">
     <%= f.submit "Submit" %>
   </div>
+
+  <svg class='close-icon' width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="0" x2="50" y2="50" />
+    <line x1="50" y1="0" x2="0" y2="50" />
+  </svg>  
 <% end %>

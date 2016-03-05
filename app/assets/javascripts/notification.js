@@ -3,12 +3,9 @@
 
   setTimeout(function() {
     notifications.fadeOut();
-  }, 2500);
+  }, 2000);
 
-  // $.each(notifications, function(el) {
-  //   $(el).on('click', function() {
-  //     console.log('fired')
-  //     this.fadeOut();
-  //   });
-  // });
+  $('.close-icon').on('click', function() {
+    $('body').removeClass();
+  });
 })();

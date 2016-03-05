@@ -44,3 +44,19 @@
   }
 
 }
+
+.close-icon {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #ccc;
+  stroke: white;
+  stroke-width: 1px;
+  cursor: pointer;
+  transition: background-color .25s, stroke .25s;
+}
+
+.close-icon:hover {
+  background-color: #333;
+  stroke: yellow;
+}
