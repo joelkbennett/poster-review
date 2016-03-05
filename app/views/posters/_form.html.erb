@@ -1,11 +1,11 @@
-<%= form_for @poster do |f| %>
-  <% if @poster.errors.any? %>
+<%= form_for new_poster do |f| %>
+  <% if new_poster.errors.any? %>
     <section class="notifications">
       <div class="notification notification-error">
         <div>
-          <%= pluralize(@poster.errors.count, "error") %> prevented this poster from being submitted:
+          <%= pluralize(new_poster.errors.count, "error") %> prevented this poster from being submitted:
           <ul>
-            <% @poster.errors.full_messages.each do |msg| %>
+            <% new_poster.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
             <% end %>
           </ul>
@@ -14,25 +14,27 @@
     </section>  
   <% end %>
 
+  <h2 class="form-title">Add Poster</h2>
+  
   <div class="form-item">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.label :title, class: 'sr-only' %>
+    <%= f.text_field :title, placeholder: 'Title' %>
   </div>
 
   <div class="form-item">
-    <%= f.label :image %><br>
+    <%= f.label :artist, class: 'sr-only' %>
+    <%= f.text_field :artist, placeholder: 'Artist' %>
+  </div>
+
+  <div class="form-item">
+    <%= f.label :image, class: 'sr-only' %><br>
     <%= f.file_field :image %>
   </div>  
 
-  <div class="form-item">
-    <%= f.label :artist %>
-    <%= f.text_field :artist %>
-  </div>
-
-  <div class="form-item">
-    <%= f.label :release_date %>
+  <!-- <div class="form-item">
+    <%= f.label :release_date, class: 'sr-only' %>
     <%= f.date_field :release_date %>
-  </div>
+  </div> -->
 
   <div class="form-item">
     <%= f.submit "Submit" %>

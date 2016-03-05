@@ -11,6 +11,18 @@
   <%= render 'layouts/nav' %>
   <%= render 'layouts/admin_nav' if is_admin? %>
   <div class="page">
+    <div class='form-drawer form-drawer-poster'>
+      <div class="form-drawer-inner">
+        <%= render 'posters/form', new_poster: Poster.new %>
+      </div>
+    </div>
+
+    <div class="form-drawer form-drawer-login">
+      <div class="form-drawer-inner">
+        <%= render 'layouts/login' %>
+      </div>
+    </div>
+
     <%= render 'layouts/header' %>
     <%= render 'layouts/flash' %>
     <section class="site-body">

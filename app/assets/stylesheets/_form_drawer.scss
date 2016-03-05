@@ -1,0 +1,46 @@
+.form-drawer {
+  width: 600px;
+  min-height: 100%;
+  background-color: #f6f6f6;
+  position: fixed;
+
+  input[type=text] {
+    width: 100%;
+  }
+}
+
+.form-drawer-login,
+.form-drawer-poster {
+  transform: translateX(-600px);
+  z-index: 1;
+}
+
+.form-drawer-inner {
+  padding: 50px 50px 50px 50px;
+}
+
+// Individual Forms
+
+.form-active-login {
+  
+  .page {
+    transform: translateX(600px);
+  }
+
+  .form-drawer-login {
+    z-index: 2;
+  }
+
+}
+
+.form-active-poster {
+
+  .page {
+    transform: translateX(600px);
+  }
+
+  .form-drawer-poster {
+    z-index: 2;
+  }
+
+}

@@ -28,7 +28,6 @@
     var title = $('<h1>').addClass('poster-title').text(res.title);
     inner.empty().append(poster).append(title);
     display.on('click', function() {
-      console.log(posterTop);
       moveTo(posterTop);
       body.removeClass('poster-active');
       inner.empty();
@@ -67,8 +66,10 @@
     return wrap;
   }
 
+  // 
+
   function moveTo(position) {
-    $('html,  body').animate({
+    body.animate({
       scrollTop: position
     }, 500);
   }
