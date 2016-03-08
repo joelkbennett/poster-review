@@ -25,7 +25,7 @@
 
   function createPoster(res, posterTop) {
     var poster = $('<img>').attr({src: res.image.url});
-    var title = $('<h1>').addClass('poster-title').text(res.title);
+    var title = $('<div>').append($('<h1>').addClass('poster-title').text(res.title));
     inner.empty().append(poster).append(title);
     display.on('click', function() {
       moveTo(posterTop);
@@ -38,29 +38,37 @@
 
   // search
 
-  var teasers = $('.poster-teaser');
+  var teasers = $('.poster-teasers');
   var form = $('.site-search-form');
 
   form.on('ajax:success', function(e, res) {
+
     teasers.empty();
 
-    res.forEach(function(data) {
-      teasers.append(createTeaser(data));
-    });
+    for (var i = 0; i < res.length; i++) {
+    // res.forEach(function(data) {
+      console.log(res[i]);
+      console.log(teasers)
+      teasers.append(createTeaser(res[i]));
+    // });
+    }
 
     bindPosterClick();
   });
 
   function createTeaser(data) {
     wrap = $('<article>').addClass('poster-teaser');
+
     image = $('<img>').attr('src', data.image.url)
+    
     link = $('<a>').addClass('image-link')
                    .attr('href', '/posters/' + data.id)
                    .data('id', data.id)
                    .append(image);
-    title = $('<h1>').addClass('teaser-title').text(data.title)
-    subtitle = $('<h2>').addClass('teaser-subtitle').text(data.artist)
-    wrap.append(link)
+
+    title = $('<h1>').addClass('teaser-title').text(data.title);
+    subtitle = $('<h2>').addClass('teaser-subtitle').text(data.artist);
+    wrap.append(link);
     wrap.append(title);
     wrap.append(subtitle);
     return wrap;

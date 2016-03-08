@@ -28,24 +28,11 @@ class PostersController < ApplicationController
       image: params[:image]
     )
 
-    # if @poster.save
-    #   respond_to do |format|
-    @poster.save
-    format.json { render json: @poster, status: :created }
-
-    # format.js { render 'test' }
-    #   end
-    # else
-    #   respond_to do |format|
-    #     "ERROR"
-    #   end
-    # end
-
-    # if @poster.save
-    #   redirect_to posters_path #, notice: "#{@poster.title} added"
-    # else
-    #   render :new
-    # end
+    if @poster.save
+      respond_to do |format|
+        format.json { render json: @poster, status: :created }
+      end
+    end
   end
 
   def update
@@ -66,9 +53,9 @@ class PostersController < ApplicationController
 
   protected
 
-  # def poster_params
-  #   params.require(:poster).permit(
-  #     :title, :artist, :release_date, :image
-  #   )
-  # end
+  def poster_params
+    params.require(:poster).permit(
+      :title, :artist, :image
+    )
+  end
 end

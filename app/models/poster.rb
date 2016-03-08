@@ -7,7 +7,7 @@ class Poster < ActiveRecord::Base
 
   validates :title, presence: true
   validates :artist, presence: true
-  validates :image, presence: true
+  # validates :image, presence: true
 
   scope :search, ->(query) { where("title LIKE :q OR artist LIKE :q", q: "%#{query}%") }
 
