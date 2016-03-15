@@ -26,6 +26,7 @@
   function createPoster(res, posterTop) {
     var poster = $('<img>').attr({src: res.image.url});
     var title = $('<div>').append($('<h1>').addClass('poster-title').text(res.title));
+    var artist = $('<div>').append($('<p>').text(res.artist));
     inner.empty().append(poster).append(title);
     display.on('click', function() {
       moveTo(posterTop);
@@ -42,17 +43,10 @@
   var form = $('.site-search-form');
 
   form.on('ajax:success', function(e, res) {
-
     teasers.empty();
-
     for (var i = 0; i < res.length; i++) {
-    // res.forEach(function(data) {
-      console.log(res[i]);
-      console.log(teasers)
       teasers.append(createTeaser(res[i]));
-    // });
     }
-
     bindPosterClick();
   });
 

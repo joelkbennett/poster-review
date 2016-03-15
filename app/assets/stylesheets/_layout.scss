@@ -84,8 +84,8 @@ body {
   right: 0;
   overflow: scroll;
   height: 100%;
-  width: 1200px;
-  transform: translateX(1200px);
+  width: 800px;
+  transform: translateX(800px);
   transition: transform .5;
   z-index: 3;
 
@@ -100,7 +100,7 @@ body.poster-active {
   }
 
   .page {
-    transform: translate(-1200px);
+    transform: translate(-800px);
   }
 }
 
